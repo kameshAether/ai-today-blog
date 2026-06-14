@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Today — Insights on Artificial Intelligence</title>
+<style>
+:root{--bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--fg:#fff;--muted:#999;--dim:#444;--border:#1e1e1e;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* Subtle grid bg */
+.bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* ──── Header ──── */
+header{padding:18px 0;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,10,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:100}
+nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:700;letter-spacing:-.5px}.logo span{color:var(--dim)}
+.nav-links{display:flex;gap:28px}.nav-links a{color:var(--muted);font-size:13px;letter-spacing:.3px;transition:color .2s}.nav-links a:hover{color:var(--fg)}
+
+/* ──── Hero ──── */
+.hero{padding:110px 0 90px;text-align:center}
+.hero h1{font-size:clamp(42px,7.5vw,88px);font-weight:800;letter-spacing:-3px;line-height:1.02;margin-bottom:20px;opacity:0;transform:translateY(28px);animation:up .7s ease forwards}
+.hero .sub{font-size:19px;color:var(--muted);max-width:520px;margin:0 auto 40px;opacity:0;animation:up .7s ease .12s forwards}
+.hero-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;opacity:0;animation:up .7s ease .25s forwards}
+.hero-tags span{padding:5px 14px;border:1px solid var(--border);border-radius:20px;font-size:12px;color:var(--dim);transition:border-color .3s,color .3s}
+.hero-tags span:hover{border-color:var(--muted);color:var(--muted)}
+.scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--dim),transparent);margin:56px auto 0;opacity:0;animation:up .7s ease .4s forwards}
+
+/* ──── Numbers Bar ──── */
+.numbers{padding:40px 0;border-bottom:1px solid var(--border)}
+.numbers-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px}
+.num-item{text-align:center;opacity:0;transform:translateY(16px)}
+.num-item.show{opacity:1;transform:translateY(0);transition:all .6s ease}
+.num-val{font-size:42px;font-weight:800;letter-spacing:-2px}
+.num-label{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+
+/* ──── Section ──── */
+.section{padding:72px 0}
+.section-head{font-size:13px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:40px;display:flex;align-items:center;gap:16px}
+.section-head::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ──── Grid ──── */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;cursor:pointer;opacity:0;transform:translateY(18px)}
+.card.show{opacity:1;transform:translateY(0);transition:opacity .55s ease,transform .55s ease,border-color .35s,box-shadow .35s}
+.card:hover{transform:translateY(-2px);border-color:#333;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.card-img{width:100%;height:190px;overflow:hidden;background:var(--bg3);position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .5s ease;filter:saturate(.8) brightness(.85)}
+.card:hover .card-img img{transform:scale(1.05);filter:saturate(1) brightness(1)}
+.card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(10,10,10,.4))}
+.card-body{padding:20px}
+.card-meta{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:10px;display:flex;gap:14px}
+.card-tag{color:var(--muted);font-weight:600}
+.card-title{font-size:17px;font-weight:600;letter-spacing:-.2px;line-height:1.35;margin-bottom:8px}
+.card-text{font-size:13px;color:var(--dim);line-height:1.7}
+
+/* ──── Featured ──── */
+.featured{padding:40px 0 72px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:40px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.feat.show{opacity:1;transform:translateY(0)}
+.feat-img{width:100%;height:340px;border-radius:8px;overflow:hidden;background:var(--bg3);position:relative}
+.feat-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)brightness(.9);transition:filter .4s}
+.feat:hover .feat-img img{filter:saturate(1)brightness(1)}
+.feat-body h2{font-size:34px;font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:18px}
+.feat-body p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-weight:500;transition:border-color .2s,color .2s}
+.btn:hover{border-color:var(--muted);color:var(--muted)}
+.btn svg{width:14px;height:14px;transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+
+/* ──── Quote ──── */
+.quote-section{padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.quote{max-width:700px;margin:0 auto;text-align:center;opacity:0;transform:translateY(16px);transition:all .6s ease}
+.quote.show{opacity:1;transform:translateY(0)}
+.quote blockquote{font-size:26px;font-weight:300;letter-spacing:-.5px;line-height:1.5;color:var(--muted)}
+.quote cite{display:block;margin-top:18px;font-size:13px;font-style:normal;color:var(--dim);letter-spacing:1px}
+
+/* ──── Newsletter ──── */
+.nl{padding:60px 0;text-align:center}
+.nl h3{font-size:22px;font-weight:700;letter-spacing:-.5px;margin-bottom:10px}
+.nl p{color:var(--dim);margin-bottom:24px;font-size:14px}
+.nl-form{display:flex;gap:10px;max-width:400px;margin:0 auto}
+.nl-form input{flex:1;padding:11px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--fg);font-size:14px;outline:none;transition:border-color .2s}
+.nl-form input:focus{border-color:#555}
+.nl-form button{padding:11px 24px;background:#fff;color:#000;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s}
+.nl-form button:hover{opacity:.85}
+.nl-form button.done{background:var(--bg3);color:var(--muted)}
+
+/* ──── Footer ──── */
+footer{border-top:1px solid var(--border);padding:36px 0;display:flex;justify-content:space-between;font-size:12px;color:var(--dim);letter-spacing:.3px}
+
+/* ──── Animations ──── */
+@keyframes up{to{opacity:1;transform:translateY(0)}}
+
+/* Particle canvas */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0}
+
+/* ──── Responsive ──── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .feat{grid-template-columns:1fr;padding:24px;gap:24px}
+  .feat-img{height:200px}
+  .feat-body h2{font-size:24px}
+  .grid{grid-template-columns:1fr}
+  .nl-form{flex-direction:column}
+  .numbers-grid{flex-direction:column;align-items:center}
+}
+
+/* Image error fallback */
+.card-img img.onerror,.feat-img img.onerror{display:none}
+</style>
+<link rel="preconnect" href="https://picsum.photos">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="bg-grid"></div>
+
+<header><div class="wrap"><nav>
+<a href="#" class="logo">AI<span>today</span></a>
+<div class="nav-links">
+<a href="#featured">Featured</a>
+<a href="#latest">Latest</a>
+<a href="#about">About</a>
+</div>
+</nav></div></header>
+
+<section class="hero"><div class="wrap">
+<h1>The Future<br>is Intelligent</h1>
+<p class="sub">Curated insights on the AI revolution — frontier models, real-world deployment, ethics, and what actually matters.</p>
+<div class="hero-tags">
+<span>LLMs</span><span>Computer Vision</span><span>Robotics</span><span>Edge AI</span><span>Ethics</span><span>Open Source</span>
+</div>
+<div class="scroll-line"></div>
+</div></section>
+
+<section class="numbers"><div class="wrap">
+<div class="numbers-grid">
+<div class="num-item" data-delay="0"><div class="num-val" data-target="1847">0</div><div class="num-label">Papers per week</div></div>
+<div class="num-item" data-delay="1"><div class="num-val" data-target="312">0</div><div class="num-label">Open-source models</div></div>
+<div class="num-item" data-delay="2"><div class="num-val" data-target="94">0</div><div class="num-label">Countries with AI policy</div></div>
+<div class="num-item" data-delay="3"><div class="num-val" data-target="12">0</div><div class="num-label">Bn parameters (frontier)</div></div>
+</div>
+</div></section>
+
+<section class="featured" id="featured"><div class="wrap">
+<div class="section-head">Featured</div>
+<div class="feat">
+<div class="feat-img"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="AI Neural Network Visualization"></div>
+<div class="feat-body">
+<div class="card-meta"><span>June 2026</span><span>12 min read</span></div>
+<h2>Are We Approaching AGI? A Sober Look at the Evidence</h2>
+<p>Recent breakthroughs in reasoning, tool use, and agentic behavior have reignited the AGI debate. But separating genuine capability advances from benchmark-hacking theatrics requires nuance. We examine what the latest models can actually do — and where they still fail in ways no human would.</p>
+<a href="#" class="btn">Read article <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+</div>
+</div>
+</div></section>
+
+<section class="quote-section"><div class="wrap">
+<div class="quote">
+<blockquote>&ldquo;The question is not whether AI will transform society, but whether we will shape that transformation wisely.&rdquo;</blockquote>
+<cite>— Fei-Fei Li, 2026</cite>
+</div>
+</div></section>
+
+<section class="section" id="latest"><div class="wrap">
+<div class="section-head">Latest</div>
+<div class="grid">
+
+<div class="card" data-delay="0">
+<div class="card-img"><img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80" alt="Code on screen"></div>
+<div class="card-body">
+<div class="card-meta"><span class="card-tag">Trending</span><span>8 min</span></div>
+<div class="card-title">Open-Source Models Now Rival GPT-4 on Key Benchmarks</div>
+<div class="card-text">The open-source community has delivered. Llama 4, Mistral Large 2, and DeepSeek-V3 close the gap with proprietary models at a fraction of the cost.</div>
+</div></div>
+
+<div class="card" data-delay="1">
+<div class="card-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Data visualization"></div>
+<div class="card-body">
+<div class="card-meta"><span class="card-tag">Analysis</span><span>10 min</span></div>
+<div class="card-title">AI in Healthcare: From Hype to Clinical Reality</div>
+<div class="card-text">After years of promises, AI diagnostic tools are finally earning FDA clearance and clinician trust. Here is what changed and what stayed hard.</div>
+</div></div>
+
+<div class="card" data-delay="2">
+<div class="card-img"><img src="https://picsum.photos/seed/aidatacenter/600/400" alt="Data center infrastructure"></div>
+<div class="card-body">
+<div class="card-meta"><span class="card-tag">Infrastructure</span><span>6 min</span></div>
+<div class="card-title">The Hidden Cost of Inference: Why Serving AI is the New Bottleneck</div>
+<div class="card-text">Training gets the headlines, but serving models at scale is where the real engineering challenges — and costs — now live.</div>
+</div></div>
+
+<div class="card" data-delay="3">
+<div class="card-img"><img src="https://picsum.photos/seed/airobotics/600/400" alt="Robotics and AI"></div>
+<div class="card-body">
+<div class="card-meta"><span class="card-tag">Robotics</span><span>9 min</span></div>
+<div class="card-title">Embodied AI: When Language Models Get a Body</div>
+<div class="card-text">Combining LLMs with physical robots produces results that pure software never could. The era of useful household robots may finally be here.</div>
+</div></div>
+
+<div class="card" data-delay="4">
+<div class="card-img"><img src="https://picsum.photos/seed/aiethics/600/400" alt="AI ethics abstract"></div>
+<div class="card-body">
+<div class="card-meta"><span class="card-tag">Ethics</span><span>7 min</span></div>
+<div class="card-title">The Alignment Problem in 2026: What Progress Looks Like</div>
+<div class="card-text">Alignment research has moved from abstract philosophy to concrete engineering. Here is where the field stands after a year of rapid iteration.</div>
+</div></div>
+
+<div class="card" data-delay="5">
+<div class="card-img"><img src="https://picsum.photos/seed/aivision/600/400" alt="Computer vision"></div>
+<div class="card-body">
+<div class="card-meta"><span class="card-tag">Developer Tools</span><span>5 min</span></div>
+<div class="card-title">CNNs Are Back: How ConvNeXt and Vision Transformers Coexist</div>
+<div class="card-text">The CNN vs Transformer debate in vision has a surprising resolution — both architectures are thriving, each where their inductive biases shine.</div>
+</div></div>
+
+</div>
+</div></section>
+
+<div class="nl" id="about"><div class="wrap">
+<h3>Stay Updated</h3>
+<p>Weekly digest of the most important AI developments. No noise, no hype — just signal.</p>
+<form class="nl-form" onsubmit="event.preventDefault();const b=this.querySelector('button');b.textContent='Subscribed';b.classList.add('done')">
+<input type="email" placeholder="you@example.com" required>
+<button type="submit">Subscribe</button>
+</form>
+</div></div>
+
+<footer><div class="wrap">
+<span>&copy; 2026 AI Today</span>
+<span>built with intention</span>
+</div></footer>
+
+<script>
+// ──── Intersection Observer for scroll animations ────
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const d=parseInt(e.target.dataset.delay||0);
+      setTimeout(()=>e.target.classList.add('show'),d*100);
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+
+document.querySelectorAll('.card,.num-item,.feat,.quote').forEach(el=>obs.observe(el));
+
+// ──── Counting animation for numbers ────
+const numObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;
+      const target=parseInt(el.dataset.target);
+      const dur=1200;
+      const start=performance.now();
+      function tick(now){
+        const p=Math.min((now-start)/dur,1);
+        const ease=1-Math.pow(1-p,3);
+        el.textContent=Math.round(target*ease).toLocaleString();
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=target.toLocaleString();
+      }
+      requestAnimationFrame(tick);
+      numObs.unobserve(el);
+    }
+  });
+},{threshold:0.5});
+
+document.querySelectorAll('.num-val').forEach(el=>numObs.observe(el));
+
+// ──── Particle network ────
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+let w,h,pts=[];
+const N=50,MAX_D=120;
+
+function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight;pts=[];for(let i=0;i<N;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.2+.4,o:Math.random()*.12+.03});}
+resize();
+window.addEventListener('resize',resize);
+
+let mouse={x:-999,y:-999};
+document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+
+function frame(){
+  ctx.clearRect(0,0,w,h);
+  pts.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>w){p.vx*=-1;p.x=Math.max(0,Math.min(w,p.x));}
+    if(p.y<0||p.y>h){p.vy*=-1;p.y=Math.max(0,Math.min(h,p.y));}
+    // Mouse repel
+    const mdx=p.x-mouse.x,mdy=p.y-mouse.y,md=Math.sqrt(mdx*mdx+mdy*mdy);
+    if(md<100){const f=.3*(1-md/100);p.x+=mdx/md*f;p.y+=mdy/md*f;}
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+p.o+')';ctx.fill();
+  });
+  // Connections
+  for(let i=0;i<pts.length;i++){
+    for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<MAX_D){
+        ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle='rgba(255,255,255,'+(0.04*(1-d/MAX_D))+')';ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches)frame();
+
+// ──── Image error handling ────
+document.querySelectorAll('img').forEach(img=>{
+  img.onerror=function(){
+    this.style.display='none';
+    this.parentElement.style.background='linear-gradient(135deg,#1a1a1a 0%,#111 100%)';
+  };
+});
+</script>
+</body>
+</html>
