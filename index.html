@@ -840,15 +840,46 @@ header.site-header {
 }
 
 .footer-copy {
-  font-family: 'EB Garamond', serif;
-  font-size: 0.85rem;
-  color: var(--sepia);
-  font-style: italic;
+ font-family: 'EB Garamond', serif;
+ font-size: 0.85rem;
+ color: var(--sepia);
+ font-style: italic;
+}
+
+/* ── Back-to-Top Button ── */
+#back-to-top {
+ position: fixed;
+ bottom: 32px;
+ right: 32px;
+ width: 44px;
+ height: 44px;
+ border-radius: 50%;
+ background: var(--chocolate);
+ color: var(--gold-light);
+ border: 2px solid var(--gold);
+ font-size: 18px;
+ cursor: pointer;
+ opacity: 0;
+ pointer-events: none;
+ transform: translateY(8px);
+ transition: opacity 0.35s ease, transform 0.35s ease, background 0.25s ease;
+ z-index: 900;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 16px rgba(26,18,11,0.25);
+}
+#back-to-top.visible {
+ opacity: 1;
+ pointer-events: auto;
+ transform: translateY(0);
+}
+#back-to-top:hover {
+ background: var(--gold);
+ color: var(--espresso);
 }
 
 /* ═══════════════════════════════════════════════
-   BOTTOM LEATHER BINDING
-   ═══════════════════════════════════════════════ */
 .leather-binding-bottom {
   height: 25px;
   background: linear-gradient(180deg,
@@ -1237,15 +1268,34 @@ header.site-header {
 
 <div class="leather-binding-bottom"></div>
 
+<button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
+
 <!-- ═══════════════════════════════════════════════
-     SCRIPTS
-     ═══════════════════════════════════════════════ -->
+ SCRIPTS
+ ═══════════════════════════════════════════════ -->
 <script>
 // ── Dust Particle Canvas Animation ──
 const canvas = document.getElementById('dust-canvas');
 const ctx = canvas.getContext('2d');
-let width, height, particles;
 
+// ── Back-to-Top Button ──
+const backToTop = document.getElementById('back-to-top');
+if (backToTop) {
+ const toggleBackToTop = () => {
+   if (window.scrollY > 400) {
+     backToTop.classList.add('visible');
+   } else {
+     backToTop.classList.remove('visible');
+   }
+ };
+ window.addEventListener('scroll', toggleBackToTop, { passive: true });
+ toggleBackToTop();
+ backToTop.addEventListener('click', () => {
+   window.scrollTo({ top: 0, behavior: 'smooth' });
+ });
+}
+
+function resize() {
 function resize() {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
