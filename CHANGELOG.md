@@ -2,6 +2,11 @@
 
 All notable changes to The Reading Nook (AI Today Blog) will be documented in this file.
 
+## [Unreleased] - 2026-07-04
+
+### Added
+- Meta description and theme-color tags for browser chrome (SEO + mobile UX)
+
 ## [1.0.0] - 2025-01-01
 
 ### Added
