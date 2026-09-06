@@ -100,6 +100,10 @@
 :root{
   --bg:#fafafa;--fg:#222;--muted:#555;--accent:#0066ff;--border:#e0e0e0;--card-bg:#fff;--shadow:0 2px 8px rgba(0,0,0,0.1);
   --dark-bg:#1e1e1e;--dark-fg:#e0e0e0;--dark-muted:#aaa;--dark-card:#2a2a2a;--dark-border:#444;
+  --chocolate:#8b4513;
+  --gold:#d4af37;
+  --gold-light:#f5deb3;
+  --espresso:#3e2723;
 }
 [data-theme="dark"]{
   --bg:var(--dark-bg);--fg:var(--dark-fg);--muted:var(--dark-muted);--card-bg:var(--dark-card);--border:var(--dark-border);
@@ -236,6 +240,38 @@ footer{
   article{padding:1rem}
   #newsletter{padding:1rem;}
 }
+/* ── Back-to-Top Button ── */
+#back-to-top {
+ position: fixed;
+ bottom: 32px;
+ right: 32px;
+ width: 44px;
+ height: 44px;
+ border-radius: 50%;
+ background: var(--chocolate);
+ color: var(--gold-light);
+ border: 2px solid var(--gold);
+ font-size: 18px;
+ cursor: pointer;
+ opacity: 0;
+ pointer-events: none;
+ transform: translateY(8px);
+ transition: opacity 0.35s ease, transform 0.35s ease, background 0.25s ease;
+ z-index: 900;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 16px rgba(26,18,11,0.25);
+}
+#back-to-top.visible {
+ opacity: 1;
+ pointer-events: auto;
+ transform: translateY(0);
+}
+#back-to-top:hover {
+ background: var(--gold);
+ color: var(--espresso);
+}
 </style>
 <link rel="canonical" href="https://kameshAether.github.io/ai-today-blog/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
@@ -365,7 +401,23 @@ footer{
     }
   });
 
-  // Newsletter form handler (placeholder)
+  // ── Back-to-Top Button ──
+const backToTop = document.getElementById('back-to-top');
+if (backToTop) {
+ const toggleBackToTop = () => {
+   if (window.scrollY > 400) {
+     backToTop.classList.add('visible');
+   } else {
+     backToTop.classList.remove('visible');
+   }
+ };
+ window.addEventListener('scroll', toggleBackToTop, { passive: true });
+ toggleBackToTop();
+ backToTop.addEventListener('click', () => {
+   window.scrollTo({ top: 0, behavior: 'smooth' });
+ });
+}
+// Newsletter form handler (placeholder)
   const form = document.getElementById('newsletter-form');
   const msg = document.getElementById('newsletter-msg');
   form.addEventListener('submit', e => {
@@ -381,5 +433,6 @@ footer{
     }
   });
 </script>
+<button id="back-to-top" aria-label="Back to top" title="Back to top">&#8593;</button>
 </body>
 </html>
