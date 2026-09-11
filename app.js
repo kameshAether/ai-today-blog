@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const search = document.getElementById('q');
   let desk = 'All';
   function apply() {
-    const q = (search.value || '').toLowerCase();
+    const q = ((search && search.value) || '').toLowerCase();
     cards.forEach(c => {
       const okD = desk === 'All' || c.dataset.desk === desk;
       const okQ = !q || (c.dataset.search || '').toLowerCase().includes(q);
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chips.forEach(x => x.classList.remove('on'));
     ch.classList.add('on'); desk = ch.dataset.desk; apply();
   }));
-  search.addEventListener('input', apply);
+  if (search) search.addEventListener('input', apply);
 
   const bar = document.getElementById('progress');
   if (bar) addEventListener('scroll', () => {
@@ -33,4 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     form.innerHTML = '<p style="font-weight:600">You are on the list. First edition lands tomorrow morning.</p>';
   });
+
+  try {
+    if (localStorage.getItem('aitoday-theme') === 'dark') document.body.classList.add('dark');
+  } catch (e) {}
+  const tgl = document.getElementById('theme-toggle');
+  function paint() { tgl.textContent = document.body.classList.contains('dark') ? '☀ Light' : '◑ Dark'; }
+  if (tgl) {
+    paint();
+    tgl.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      try { localStorage.setItem('aitoday-theme', document.body.classList.contains('dark') ? 'dark' : 'light'); } catch (e) {}
+      paint();
+    });
+  }
 });
