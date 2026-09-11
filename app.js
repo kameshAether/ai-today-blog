@@ -2,10 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.card, .reveal').forEach(el => el.classList.add('no-js'));
   }
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+  const revealer = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('vis'); revealer.unobserve(e.target); }
   }), { threshold: 0.12 });
-  document.querySelectorAll('.card, .reveal').forEach(el => io.observe(el));
+  const pending = new Set();
+  document.querySelectorAll('.card, .reveal').forEach(el => { pending.add(el); revealer.observe(el); });
+  // Safety net: if the observer never fires (broken/headless IO), never leave content invisible
+  setTimeout(() => pending.forEach(el => {
+    if (!el.classList.contains('vis')) { el.classList.add('vis'); revealer.unobserve(el); }
+  }), 2500);
 
   const chips = document.querySelectorAll('.chip');
   const cards = document.querySelectorAll('#grid .card');
