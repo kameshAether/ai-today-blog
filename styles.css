@@ -180,7 +180,7 @@ a,button{-webkit-tap-highlight-color:transparent}
   .byline{flex-wrap:wrap;gap:8px 14px}
   .sidecard .art{height:130px}
   .card .art{height:170px}
-  .chip{padding:11px 18px;font-size:12.5px}
+  .chip{padding:12px 18px;font-size:12.5px}
   .tgl{min-height:40px;display:inline-flex;align-items:center}
   .article-hero{min-height:300px}
   .article-hero .txt{padding:26px 22px}
