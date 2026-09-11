@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.card, .reveal').forEach(el => el.classList.add('no-js'));
+  }
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
   }), { threshold: 0.12 });

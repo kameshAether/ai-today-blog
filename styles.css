@@ -158,3 +158,9 @@ body.dark .prose{color:#d8d1c4}
 body.dark .prose p.lede,body.dark .prose h2{color:var(--ink)}
 body.dark .takeaway p{color:var(--ink)}
 body.dark .orb{opacity:.25}
+
+noscript .card,noscript .reveal{opacity:1 !important;transform:none !important}
+.card.no-js,.reveal.no-js{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:700px){.bench{display:block;overflow-x:auto;white-space:nowrap}.bench caption{white-space:normal}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}html{scroll-behavior:auto}.ticker .track{animation:none}}
