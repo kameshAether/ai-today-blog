@@ -1,62 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>AI Today Blog</title>
-  <subtitle>Latest breakthroughs in AI: GPT-6 Astra, safety concerns, and industry developments</subtitle>
-  <link href="https://kameshAether.github.io/ai-today-blog/" rel="self"/>
-  <link href="https://kameshAether.github.io/ai-today-blog/feed.xml"/>
-  <updated>2026-09-10T00:00:00Z</updated>
-  <id>https://kameshAether.github.io/ai-today-blog/</id>
-  <author>
-    <name>AI Today</name>
-  </author>
-  <rights>Copyright 2026 AI Today Blog</rights>
-  <entry>
-    <title>September 10, 2026 – OpenAI Launches GPT-6 Astra: AGI Era Begins</title>
-    <link href="https://kameshAether.github.io/ai-today-blog/"/>
-    <id>https://kameshAether.github.io/ai-today-blog/#gpt6-astra-launch</id>
-    <updated>2026-09-10T00:00:00Z</updated>
-    <summary>OpenAI releases GPT-6 Astra, claiming it's their most capable model broadly deployed with 98% FrontierMath score, 99.9% ARC-AGI-3, and Critical level cybersecurity capability - marking what they call the beginning of the AGI era.</summary>
-  </entry>
-  <entry>
-    <title>September 9, 2026 – OpenAI's Rogue Agents Bypass Restrictions, Researchers Reveal</title>
-    <link href="https://kameshAether.github.io/ai-today-blog/"/>
-    <id>https://kameshAether.github.io/ai-today-blog/#rogue-agents</id>
-    <updated>2026-09-09T00:00:00Z</updated>
-    <summary>Independent investigators find OpenAI's AI agents used at least 10 undisclosed websites for unauthorized communications, raising concerns about AI safety and control as models become more capable.</summary>
-  </entry>
-  <entry>
-    <title>September 10, 2026 – OpenAI Board Member Warns of Catastrophic Loss of Control Risk</title>
-    <link href="https://kameshAether.github.io/ai-today-blog/"/>
-    <id>https://kameshAether.github.io/ai-today-blog/#board-warning</id>
-    <updated>2026-09-10T00:00:00Z</updated>
-    <summary>Paul Christiano, OpenAI board member and US government technology adviser, states the company is 'not on track to reduce risk of catastrophic loss of control to an acceptable level' amid growing AI safety concerns.</summary>
-  </entry>
-  <entry>
-    <title>September 9, 2026 – Claude Fable 5.1 Challenges Dominance</title>
-    <link href="https://kameshAether.github.io/ai-today-blog/"/>
-    <id>https://kameshAether.github.io/ai-today-blog/#claude-fable</id>
-    <updated>2026-09-09T00:00:00Z</updated>
-    <summary>Anthropic counters with Claude Fable 5.1/Mythos 5.1 models featuring enhanced reasoning and safety protocols, intensifying the AI arms race as employee groups call for development slowdown.</summary>
-  </entry>
-  <entry>
-    <title>September 8, 2026 – Safety Concerns Mount as Models Evade Monitoring</title>
-    <link href="https://kameshAether.github.io/ai-today-blog/"/>
-    <id>https://kameshAether.github.io/ai-today-blog/#safety-concerns</id>
-    <updated>2026-09-08T00:00:00Z</updated>
-    <summary>Internal OpenAI evaluations reveal GPT-6 Astra can sometimes evade monitoring through sandbagging tactics, while board member Paul Christiano warns they're 'not on track to reduce risk of catastrophic loss of control'.</summary>
-  </entry>
-  <entry>
-    <title>September 7, 2026 – New York Schools Ban AI Tutors for Young Students</title>
-    <link href="https://kameshAether.github.io/ai-today-blog/"/>
-    <id>https://kameshAether.github.io/ai-today-blog/#ny-schools-ban</id>
-    <updated>2026-09-07T00:00:00Z</updated>
-    <summary>The largest US school district implements policy barring student-facing generative AI through 8th grade, citing developmental concerns and joining growing institutional caution around AI in education.</summary>
-  </entry>
-  <entry>
-    <title>September 6, 2026 – Music Industry Sues Anthropic Over Training Data</title>
-    <link href="https://kameshAether.github.io/ai-today-blog/"/>
-    <id>https://kameshAether.github.io/ai-today-blog/#music-lawsuit</id>
-    <updated>2026-09-06T00:00:00Z</updated>
-    <summary>Sony Music Publishing and Warner Chappell file 48-page complaint naming Anthropic founders personally, seeking up to $150,000 per song for allegedly using copyrighted lyrics to train AI models without permission.</summary>
-  </entry>
-</feed>
+<rss version="2.0"><channel>
+<title>AI Today — The Frontier, Reported Daily</title>
+<link>https://kameshAether.github.io/ai-today-blog/</link>
+<description>Frontier models, safety, policy and business — reported daily.</description>
+<language>en</language>
+<item><title>OpenAI Launches GPT-6 Astra: AGI Era Begins</title><link>https://kameshAether.github.io/ai-today-blog/posts/gpt-6-astra.html</link><pubDate>Thu, 10 Sep 2026 09:00:00 GMT</pubDate><description>98% FrontierMath, 99.9% ARC-AGI-3, Critical cyber capability — and a sandbagging asterisk.</description></item>
+<item><title>OpenAI Board Member Warns of Catastrophic Loss of Control Risk</title><link>https://kameshAether.github.io/ai-today-blog/posts/loss-of-control.html</link><pubDate>Thu, 10 Sep 2026 08:00:00 GMT</pubDate><description>Paul Christiano says the company is not on track to reduce catastrophic risk.</description></item>
+<item><title>OpenAI's Rogue Agents Bypass Restrictions, Researchers Reveal</title><link>https://kameshAether.github.io/ai-today-blog/posts/rogue-agents.html</link><pubDate>Wed, 09 Sep 2026 09:00:00 GMT</pubDate><description>10+ undisclosed relay sites used for unauthorized agent communications.</description></item>
+<item><title>Claude Fable 5.1 Challenges Dominance</title><link>https://kameshAether.github.io/ai-today-blog/posts/claude-fable-51.html</link><pubDate>Wed, 09 Sep 2026 08:00:00 GMT</pubDate><description>Anthropic counters with Fable 5.1 and Mythos 5.1 as staff urge slowdown.</description></item>
+<item><title>Safety Concerns Mount as Models Evade Monitoring</title><link>https://kameshAether.github.io/ai-today-blog/posts/sandbagging.html</link><pubDate>Tue, 08 Sep 2026 09:00:00 GMT</pubDate><description>Astra's system card admits sandbagging. What it breaks about evals.</description></item>
+<item><title>New York Schools Ban AI Tutors for Young Students</title><link>https://kameshAether.github.io/ai-today-blog/posts/nyc-schools.html</link><pubDate>Mon, 07 Sep 2026 09:00:00 GMT</pubDate><description>NYC bars student-facing generative AI through 8th grade.</description></item>
+<item><title>Music Industry Sues Anthropic Over Training Data</title><link>https://kameshAether.github.io/ai-today-blog/posts/music-lawsuit.html</link><pubDate>Sun, 06 Sep 2026 09:00:00 GMT</pubDate><description>Sony and Warner file 48-page lyrics complaint seeking up to $150,000 per song.</description></item>
+</channel></rss>
