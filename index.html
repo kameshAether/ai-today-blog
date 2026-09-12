@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b1917'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='19' fill='%23fdba74' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231b1917'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='19' fill='%23fdba74' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E%>">
 <meta name="theme-color" content="#faf8f4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Today — The Frontier, Reported Daily</title>
@@ -13,10 +13,14 @@
 <meta property="og:url" content="https://kameshAether.github.io/ai-today-blog/">
 <link rel="alternate" type="application/rss+xml" title="AI Today" href="feed.xml">
 <link rel="stylesheet" href="styles.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,750&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kameshAether.github.io/ai-today-blog/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"AI Today","url":"https://kameshAether.github.io/ai-today-blog/"}</script>
 </head>
 <body>
-<div class="orb a"></div><div class="orb b"></div>
+<div class="progress" id="progress"></div><div class="orb a"></div><div class="orb b"></div>
 <div class="topbar"><div class="wrap"><span>FRIDAY EDITION &nbsp;·&nbsp; SEP 11, 2026 &nbsp;·&nbsp; № 042</span><span style="display:flex;gap:14px;align-items:center"><span class="live"><i></i>TRACKING 7 STORIES</span><button class="tgl" id="theme-toggle">◑ Dark</button></span></div></div>
 <div class="wrap">
   <header class="masthead">
@@ -65,12 +69,12 @@
       <button class="chip" data-desk="Policy">Policy</button>
     </div>
   </div>
-  <div class="search"><input id="q" type="search" aria-label="Search stories" placeholder="Search stories — try “sandbagging”, “lyrics”, “tutors”…"></div>
+  <div class="search"><input id="q" type="search" aria-label="Search stories" placeholder="Search stories — try "sandbagging", "lyrics", "tutors"&#8230;"><span id="search-count" class="search-count" aria-live="polite"></span></div>
   <section class="grid" id="grid">
     <a class="card" data-desk="Safety" data-search="loss control christiano board risk catastrophic safety" href="posts/loss-of-control.html">
       <span class="art"><svg viewBox="0 0 400 190" preserveAspectRatio="xMidYMid slice"><rect width="400" height="190" fill="#0c0a09"/><circle cx="200" cy="95" r="70" fill="none" stroke="#f59e0b" stroke-width="2" opacity=".8"/><circle cx="200" cy="95" r="45" fill="#f59e0b" opacity=".25"/><path d="M40 150 L200 40 L360 150" stroke="#fff" fill="none" opacity=".25"/></svg></span>
       <span class="body"><span class="tagrow"><span class="tag">Safety</span><span class="date">Sep 10</span></span>
-      <h3>Board Member Warns of Catastrophic Loss of Control</h3><p class="ex">Paul Christiano says OpenAI is “not on track” to reduce catastrophic risk — from inside the boardroom.</p>
+      <h3>Board Member Warns of Catastrophic Loss of Control</h3><p class="ex">Paul Christiano says OpenAI is "not on track" to reduce catastrophic risk — from inside the boardroom.</p>
       <span class="foot"><span>5 MIN READ</span><span class="readlink">Read story →</span></span></span>
     </a>
     <a class="card" data-desk="Safety" data-search="sandbagging evals monitoring evade safety" href="posts/sandbagging.html">
@@ -109,12 +113,13 @@
     <p>One lead analysis, three essential briefs, zero hype. Read by builders who ship on the frontier.</p>
     <form id="nl"><input type="email" required aria-label="Email address" placeholder="you@company.com"><button type="submit">Subscribe</button></form>
     <small>Free · No spam · Unsubscribe anytime · <a href="feed.xml" style="color:#fdba74">RSS feed</a></small>
+    <p class="demo-note" style="font-size:0.75rem;color:#888;margin-top:6px">Demo only — no backend wired. Subscribe via <a href="feed.xml">RSS</a> for real updates.</p>
   </section>
 </div>
 <footer><div class="wrap"><span class="brand">AI Today</span><span>© 2026 AI Today · Independent frontier reporting</span><span><a href="desks/models.html">Models</a><a href="desks/safety.html">Safety</a><a href="desks/policy.html">Policy</a><a href="feed.xml">RSS</a><a href="sitemap.xml">Sitemap</a></span></div></footer>
 <script src="app.js"></script>
 <script>
-document.getElementById('ticker').innerHTML = ('<b>BREAKING</b> GPT-6 Astra hits 98% FrontierMath <b>SAFETY</b> Board member warns of loss of control <b>MODELS</b> Claude Fable 5.1 ships <b>POLICY</b> NYC bans AI tutors under 14 <b>BUSINESS</b> Labels sue Anthropic ').repeat(4);
+document.getElementById('ticker').innerHTML = ('<b>BREAKING</b> GPT-6 Astra hits 98% FrontierMath <b>SAFETY</b> Board member warns of loss of control <b>MODELS</b> Claude Fable 5.1 ships <b>POLICY</b> NYC bans AI tutors under 14 <b>BUSINESS</b> Labels sue Anthropic ').repeat(2);
 </script>
 </body>
 </html>

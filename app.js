@@ -18,11 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let desk = 'All';
   function apply() {
     const q = ((search && search.value) || '').toLowerCase();
+    let visible = 0;
     cards.forEach(c => {
       const okD = desk === 'All' || c.dataset.desk === desk;
       const okQ = !q || (c.dataset.search || '').toLowerCase().includes(q);
-      c.style.display = (okD && okQ) ? '' : 'none';
+      const show = okD && okQ;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
     });
+    const countEl = document.getElementById('search-count');
+    if (countEl) {
+      countEl.textContent = q ? visible + ' result' + (visible === 1 ? '' : 's') : '';
+    }
   }
   chips.forEach(ch => ch.addEventListener('click', () => {
     chips.forEach(x => x.classList.remove('on'));

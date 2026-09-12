@@ -1,15 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="https://kameshAether.github.io/ai-today-blog/feed.xml" rel="self" type="application/rss+xml"/>
 <title>AI Today — The Frontier, Reported Daily</title>
 <link>https://kameshAether.github.io/ai-today-blog/</link>
 <description>Frontier models, safety, policy and business — reported daily.</description>
 <language>en</language>
-<lastBuildDate>Fri, 11 Sep 2026 08:00:00 GMT</lastBuildDate>
-<item><title>OpenAI Launches GPT-6 Astra: AGI Era Begins</title><link>https://kameshAether.github.io/ai-today-blog/posts/gpt-6-astra.html</link><pubDate>Thu, 10 Sep 2026 09:00:00 GMT</pubDate><description>98% FrontierMath, 99.9% ARC-AGI-3, Critical cyber capability — and a sandbagging asterisk.</description></item>
-<item><title>OpenAI Board Member Warns of Catastrophic Loss of Control Risk</title><link>https://kameshAether.github.io/ai-today-blog/posts/loss-of-control.html</link><pubDate>Thu, 10 Sep 2026 08:00:00 GMT</pubDate><description>Paul Christiano says the company is not on track to reduce catastrophic risk.</description></item>
-<item><title>OpenAI's Rogue Agents Bypass Restrictions, Researchers Reveal</title><link>https://kameshAether.github.io/ai-today-blog/posts/rogue-agents.html</link><pubDate>Wed, 09 Sep 2026 09:00:00 GMT</pubDate><description>10+ undisclosed relay sites used for unauthorized agent communications.</description></item>
-<item><title>Claude Fable 5.1 Challenges Dominance</title><link>https://kameshAether.github.io/ai-today-blog/posts/claude-fable-51.html</link><pubDate>Wed, 09 Sep 2026 08:00:00 GMT</pubDate><description>Anthropic counters with Fable 5.1 and Mythos 5.1 as staff urge slowdown.</description></item>
-<item><title>Safety Concerns Mount as Models Evade Monitoring</title><link>https://kameshAether.github.io/ai-today-blog/posts/sandbagging.html</link><pubDate>Tue, 08 Sep 2026 09:00:00 GMT</pubDate><description>Astra's system card admits sandbagging. What it breaks about evals.</description></item>
-<item><title>New York Schools Ban AI Tutors for Young Students</title><link>https://kameshAether.github.io/ai-today-blog/posts/nyc-schools.html</link><pubDate>Mon, 07 Sep 2026 09:00:00 GMT</pubDate><description>NYC bars student-facing generative AI through 8th grade.</description></item>
-<item><title>Music Industry Sues Anthropic Over Training Data</title><link>https://kameshAether.github.io/ai-today-blog/posts/music-lawsuit.html</link><pubDate>Sun, 06 Sep 2026 09:00:00 GMT</pubDate><description>Sony and Warner file 48-page lyrics complaint seeking up to $150,000 per song.</description></item>
-</channel></rss>
+<lastBuildDate>Thu, 10 Sep 2026 09:00:00 GMT</lastBuildDate>
+<docs>https://www.rssboard.org/rss-specification</docs>
+<item>
+<title>OpenAI Launches GPT-6 Astra: AGI Era Begins</title>
+<link>https://kameshAether.github.io/ai-today-blog/posts/gpt-6-astra.html</link>
+<guid>https://kameshAether.github.io/ai-today-blog/posts/gpt-6-astra.html</guid>
+<category>Models</category>
+<pubDate>Thu, 10 Sep 2026 09:00:00 GMT</pubDate>
+<description>98% FrontierMath, 99.9% ARC-AGI-3, Critical cyber capability — and a sandbagging asterisk.</description>
+</item>
+<item>
+<title>OpenAI Board Member Warns of Catastrophic Loss of Control Risk</title>
+<link>https://kameshAether.github.io/ai-today-blog/posts/loss-of-control.html</link>
+<guid>https://kameshAether.github.io/ai-today-blog/posts/loss-of-control.html</guid>
+<category>Safety</category>
+<pubDate>Thu, 10 Sep 2026 08:00:00 GMT</pubDate>
+<description>Paul Christiano says the company is not on track to reduce catastrophic risk.</description>
+</item>
+<item>
+<title>OpenAI's Rogue Agents Bypass Restrictions, Researchers Reveal</title>
+<link>https://kameshAether.github.io/ai-today-blog/posts/rogue-agents.html</link>
+<guid>https://kameshAether.github.io/ai-today-blog/posts/rogue-agents.html</guid>
+<category>Safety</category>
+<pubDate>Wed, 09 Sep 2026 09:00:00 GMT</pubDate>
+<description>10+ undisclosed relay sites used for unauthorized agent communications.</description>
+</item>
+<item>
+<title>Claude Fable 5.1 Challenges Dominance</title>
+<link>https://kameshAether.github.io/ai-today-blog/posts/claude-fable-51.html</link>
+<guid>https://kameshAether.github.io/ai-today-blog/posts/claude-fable-51.html</guid>
+<category>Models</category>
+<pubDate>Wed, 09 Sep 2026 08:00:00 GMT</pubDate>
+<description>Anthropic counters with Fable 5.1 and Mythos 5.1 as staff urge slowdown.</description>
+</item>
+<item>
+<title>Safety Concerns Mount as Models Evade Monitoring</title>
+<link>https://kameshAether.github.io/ai-today-blog/posts/sandbagging.html</link>
+<guid>https://kameshAether.github.io/ai-today-blog/posts/sandbagging.html</guid>
+<category>Models</category>
+<pubDate>Tue, 08 Sep 2026 09:00:00 GMT</pubDate>
+<description>Astra's system card admits sandbagging. What it breaks about evals.</description>
+</item>
+<item>
+<title>New York Schools Ban AI Tutors for Young Students</title>
+<link>https://kameshAether.github.io/ai-today-blog/posts/nyc-schools.html</link>
+<guid>https://kameshAether.github.io/ai-today-blog/posts/nyc-schools.html</guid>
+<category>Policy</category>
+<pubDate>Mon, 07 Sep 2026 09:00:00 GMT</pubDate>
+<description>NYC bars student-facing generative AI through 8th grade.</description>
+</item>
+<item>
+<title>Music Industry Sues Anthropic Over Training Data</title>
+<link>https://kameshAether.github.io/ai-today-blog/posts/music-lawsuit.html</link>
+<guid>https://kameshAether.github.io/ai-today-blog/posts/music-lawsuit.html</guid>
+<category>Business</category>
+<pubDate>Sun, 06 Sep 2026 09:00:00 GMT</pubDate>
+<description>Sony and Warner file 48-page lyrics complaint seeking up to $150,000 per song.</description>
+</item>
+</channel>
+</rss>

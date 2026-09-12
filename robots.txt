@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kameshAether.github.io/ai-today-blog/sitemap.xml

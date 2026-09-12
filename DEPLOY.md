@@ -19,7 +19,7 @@
 ## GitHub Pages Configuration
 
 The repository uses the GitHub Actions deployment method (recommended approach):
-- Workflow: `.github/workflows/deploy.yml`
+- Workflow: `.github/workflows/pages.yml`
 - Triggered on: push to `main` branch or manual `workflow_dispatch`
 - Uses official Actions: `actions/configure-pages@v5`, `actions/upload-pages-artifact@v3`, `actions/deploy-pages@v4`
 

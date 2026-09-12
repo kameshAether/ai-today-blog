@@ -1,21 +1,25 @@
 # Changelog
 
-All notable changes to The Reading Nook (AI Today Blog) will be documented in this file.
+All notable changes to AI Today will be documented in this file.
 
-## [Unreleased] - 2026-07-04
+## [Unreleased] - 2026-09-12
+
+### Fixed
+- JSON-LD @context URLs fixed on index.html and all post pages (was broken `https://***`)
+- Feed elements verified: guid, atom:link, category present on all items
+- Sitemap lastmod present on all URLs
+- robots meta + canonical tags verified on all pages
+
+## [1.0.0] - 2026-09-11
 
 ### Added
-- Meta description and theme-color tags for browser chrome (SEO + mobile UX)
-
-## [1.0.0] - 2025-01-01
-
-### Added
-- Initial vintage book-aesthetic blog: The Reading Nock — A Curated Book Blog
-- Paper texture SVG overlay, dust-canvas particle system, dual leather-binding bars
-- Blog grid with cover art, spine accents, excerpts, read-time, and read-more links
-- Featured image cover, author bio, "About This Blog" section
-- Scroll-reveal animations via IntersectionObserver
-- Parallax effect on the featured-image cover
-- Navigation ribbon bar with hover lift transitions
-- Wax seal animation badge with initial
-- Full responsive design (clamp typography, mobile breakpoint at 768px)
+- AI Today blog: frontier models, safety, policy and business — reported daily
+- Index page with lead story, sidebar cards, story grid, newsletter signup
+- 7 article posts: GPT-6 Astra, Rogue Agents, Loss of Control, Claude Fable 5.1, Sandbagging, NYC Schools ban, Music lawsuit
+- Desk pages: Models, Safety, Policy
+- RSS feed (feed.xml) with guid, atom:link, category
+- Sitemap (sitemap.xml) with lastmod on all URLs
+- JSON-LD structured data (Blog on index, BlogPosting on posts)
+- robots meta + canonical on all pages
+- Client-side search, filtering, dark mode toggle, scroll progress
+- GitHub Pages deployment via Actions

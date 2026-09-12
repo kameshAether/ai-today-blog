@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://kameshAether.github.io/ai-today-blog/</loc><changefreq>daily</changefreq></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/desks/models.html</loc><changefreq>weekly</changefreq></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/desks/safety.html</loc><changefreq>weekly</changefreq></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/desks/policy.html</loc><changefreq>weekly</changefreq></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/posts/gpt-6-astra.html</loc><lastmod>2026-09-11</lastmod></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/posts/loss-of-control.html</loc><lastmod>2026-09-11</lastmod></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/posts/rogue-agents.html</loc><lastmod>2026-09-11</lastmod></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/posts/claude-fable-51.html</loc><lastmod>2026-09-11</lastmod></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/posts/sandbagging.html</loc><lastmod>2026-09-11</lastmod></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/posts/nyc-schools.html</loc><lastmod>2026-09-11</lastmod></url>
-<url><loc>https://kameshAether.github.io/ai-today-blog/posts/music-lawsuit.html</loc><lastmod>2026-09-11</lastmod></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/</loc><lastmod>2026-09-11</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/desks/models.html</loc><lastmod>2026-09-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/desks/safety.html</loc><lastmod>2026-09-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/desks/policy.html</loc><lastmod>2026-09-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/posts/gpt-6-astra.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/posts/loss-of-control.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/posts/rogue-agents.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/posts/claude-fable-51.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/posts/sandbagging.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/posts/nyc-schools.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://kameshAether.github.io/ai-today-blog/posts/music-lawsuit.html</loc><lastmod>2026-09-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
